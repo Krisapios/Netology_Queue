@@ -1,5 +1,6 @@
-import java.net.ProxySelector;
-import java.util.*;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,17 +18,20 @@ public class Main {
                 System.out.println(person.toString());
             }
         }
-        System.out.println("Билеты кончились");
-        System.out.println(clients.isEmpty());
+        if (clients.isEmpty()) {
+            System.out.println("Билеты кончились");
+        }
+
+        System.out.println(clients.isEmpty()); // проверка что очередь пустая
     }
 
     static List<Person> generateClients() {
         return List.of(
-                new Person("Иван", "Петров", 2),
-                new Person("Евгений", "Букин", 4),
-                new Person("Петр", "Жириновский", 0),
-                new Person("Артем", "Kи", 9),
-                new Person("Данил", "Кораблев", 5)
+                new Person("Иван", "Петров", 1),
+                new Person("Евгений", "Букин", 0),
+                new Person("Петр", "Жириновский", 2),
+                new Person("Артем", "Kи", 3),
+                new Person("Данил", "Кораблев", 4)
         );
     }
 }
