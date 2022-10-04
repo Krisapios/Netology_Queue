@@ -17,15 +17,11 @@ public class Person {
         return surname;
     }
 
-    public void setTicket(int ticket) {
-        this.ticket = ticket;
-    }
-
-    public String toString() {
-        return name + " " + surname + " прокатился на атракционе. Осталось билетов: " + ticket;
-    }
-
     public int getTicket() {
         return ticket;
+    }
+
+    public void setTicket(int ticket) {
+        this.ticket = ticket;
     }
 }

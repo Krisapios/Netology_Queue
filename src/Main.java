@@ -12,26 +12,23 @@ public class Main {
 
             int tickets = person.getTicket();
             if (tickets > 0) {
-                System.out.println(person.surname + " " + person.name + " имеет " + tickets + " билетов");
-                person.setTicket(--tickets);
                 clients.offer(person);
-                System.out.println(person.toString());
+                System.out.println(person.surname + " " + person.name + " прокатился на аттракционе ");
+                person.setTicket(--tickets);
             }
         }
         if (clients.isEmpty()) {
             System.out.println("Билеты кончились");
         }
-
-        System.out.println(clients.isEmpty()); // проверка что очередь пустая
     }
 
     static List<Person> generateClients() {
         return List.of(
                 new Person("Иван", "Петров", 1),
-                new Person("Евгений", "Букин", 0),
-                new Person("Петр", "Жириновский", 2),
+                new Person("Евгений", "Букин", 1),
+                new Person("Петр", "Жириновский", 1),
                 new Person("Артем", "Kи", 3),
-                new Person("Данил", "Кораблев", 4)
+                new Person("Данил", "Кораблев", 2)
         );
     }
 }
