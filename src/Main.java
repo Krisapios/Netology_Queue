@@ -8,13 +8,13 @@ public class Main {
 
         while (!clients.isEmpty()) {
             Person person = clients.poll();
-
-
             int tickets = person.getTicket();
             if (tickets > 0) {
-                clients.offer(person);
-                System.out.println(person.surname + " " + person.name + " прокатился на аттракционе ");
                 person.setTicket(--tickets);
+                System.out.println(person.surname + " " + person.name + " прокатился на аттракционе ");
+            }
+            if (tickets > 0) { // если после катания билет остался, то добавляем обратно в очередь
+                clients.offer(person);
             }
         }
         if (clients.isEmpty()) {
@@ -26,7 +26,7 @@ public class Main {
         return List.of(
                 new Person("Иван", "Петров", 1),
                 new Person("Евгений", "Букин", 1),
-                new Person("Петр", "Жириновский", 1),
+                new Person("Петр", "Жириновский", 0),
                 new Person("Артем", "Kи", 3),
                 new Person("Данил", "Кораблев", 2)
         );
